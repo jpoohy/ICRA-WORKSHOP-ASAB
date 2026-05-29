@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的视频展示页</title>
+    <style>
+        /* 页面整体样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 { margin-bottom: 40px; color: #2c3e50; }
+        
+        /* 视频网格布局（自动适应屏幕大小，一行放多个） */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 单个视频卡片样式 */
+        .video-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .video-card:hover { transform: translateY(-5px); }
+        .video-card h3 { margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
+        
+        /* 确保视频充满卡片宽度 */
+        video, iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* 保持宽高的视频比例 */
+            border: none;
+            border-radius: 8px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎬 我的精选视频集</h1>
+
+    <div class="video-grid">
+        
+        <div class="video-card">
+            <h3>1. 你的第一个视频标题</h3>
+            <iframe src="//player.bilibili.com/player.html?bvid=BV1xx411c7mD&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        </div>
+
+        <div class="video-card">
+            <h3>2. 你的第二个视频标题</h3>
+            <video controls>
+                <source src="videos/my-video.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+
+        <div class="video-card">
+            <h3>3. 第三个视频标题</h3>
+            <iframe src="替换为你的视频链接" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card">
+            <h3>4. 第四个视频标题</h3>
+            <iframe src="替换为你的视频链接" allowfullscreen></iframe>
+        </div>
+        
+        </div>
+
+</body>
+</html>
