@@ -3,79 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的视频展示页</title>
+    <title>ICRA-WORKSHOP-ASAB Project Page</title>
     <style>
-        /* 页面整体样式 */
+        /* 学术风格的页面基础设置 */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: #333;
-            margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        h1 { margin-bottom: 40px; color: #2c3e50; }
-        
-        /* 视频网格布局（自动适应屏幕大小，一行放多个） */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            line-height: 1.6;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 40px 20px;
+        }
+        /* 标题和作者区域居中 */
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #111;
+        }
+        .authors {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .authors a {
+            color: #0366d6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .authors a:hover { text-decoration: underline; }
+        
+        /* 摘要区块背景高亮 */
+        .abstract {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: justify;
+        }
+        .abstract h2 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.8em;
         }
         
-        /* 单个视频卡片样式 */
-        .video-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+        /* 视频展示区域 */
+        .video-section {
+            margin-bottom: 60px;
         }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-card h3 { margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; }
-        
-        /* 确保视频充满卡片宽度 */
-        video, iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9; /* 保持宽高的视频比例 */
-            border: none;
+        .video-section h3 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 保持 16:9 的视频比例 */
+            height: 0;
+            overflow: hidden;
             border-radius: 8px;
             background-color: #000;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .caption {
+            font-size: 0.95em;
+            color: #666;
+            text-align: center;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <h1>🎬 我的精选视频集</h1>
+    <!-- 顶部标题区域 -->
+    <h1>你的学术论文或项目名称</h1>
+    
+    <div class="authors">
+        <a href="#">作者名字 1</a>, 
+        <a href="#">作者名字 2</a>, 
+        <a href="#">作者名字 3</a><br><br>
+        <em>你的大学或研究机构名称</em><br><br>
+        <strong>ICRA 2026 ASAB Workshop</strong>
+    </div>
 
-    <div class="video-grid">
-        
-        <div class="video-card">
-            <h3>1. 你的第一个视频标题</h3>
-            <iframe src="//player.bilibili.com/player.html?bvid=BV1xx411c7mD&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-        </div>
+    <!-- 摘要区域 -->
+    <div class="abstract">
+        <h2>Abstract</h2>
+        <p>在这里输入你的项目介绍或论文摘要。这种排版非常适合学术会议展示，能够让评委和同行第一时间了解你们的研究背景、方法和核心贡献。文字会自动两端对齐，看起来非常规整专业。</p>
+    </div>
 
-        <div class="video-card">
-            <h3>2. 你的第二个视频标题</h3>
-            <video controls>
-                <source src="videos/my-video.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
+    <!-- 第 1 组视频 -->
+    <div class="video-section">
+        <h3>1. 核心方法演示 (Main Demonstration)</h3>
+        <div class="video-container">
+            <!-- 替换下面 src 里面的链接为你的视频链接 -->
+            <iframe src="https://player.bilibili.com/player.html?bvid=你的B站视频号" allowfullscreen></iframe>
         </div>
+        <div class="caption">图 1: 描述这个视频展示了什么具体的实验结果、机器人的动作或现象。</div>
+    </div>
 
-        <div class="video-card">
-            <h3>3. 第三个视频标题</h3>
-            <iframe src="替换为你的视频链接" allowfullscreen></iframe>
+    <!-- 第 2 组视频 -->
+    <div class="video-section">
+        <h3>2. 实验对比分析 (Comparative Analysis)</h3>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/你的YouTube视频ID" allowfullscreen></iframe>
         </div>
-        
-        <div class="video-card">
-            <h3>4. 第四个视频标题</h3>
-            <iframe src="替换为你的视频链接" allowfullscreen></iframe>
-        </div>
-        
-        </div>
+        <div class="caption">图 2: 对比基线方法（Baseline）的实验录像说明。</div>
+    </div>
+
+    <!-- 你可以继续复制上面的 <div class="video-section">...</div> 区块来添加第 3 到 10 组视频 -->
 
 </body>
 </html>
